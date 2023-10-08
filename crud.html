@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    
+    <script>
+        function select() {
+            console.log("Here");
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.status == 200) {
+                  document.getElementById("message").innerHTML = this.responseText;
+                }
+              };
+            xmlhttp.open("GET", "select.php", true);
+            xmlhttp.send();
+            return false;
+          }
+
+
+          function insert() {
+            console.log("Here");
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.status == 200) {
+                  document.getElementById("message").innerHTML = this.responseText;
+                }
+              };
+            window.open('index.html','_blank');
+            return false;
+          }
+    </script>
+
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+
+    <body>
+        <h1>Lab Assignement 4 : CRUD Ops on Database using PHP</h1>
+        <button onclick="insert();">Insert</button>
+        <button onclick="select();">Select</button>
+        <p id="message"></p>
+    </body>
+</html>
